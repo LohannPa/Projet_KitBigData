@@ -1,6 +1,6 @@
 import os
-from modules.gestion_des_taches import GestionnaireTaches
 from modules.supprimer_taches import SupprimerTache
+from modules.gestion_des_taches import GestionnaireTaches
 
 
 nom_fichier_data = 'data_taches.csv'

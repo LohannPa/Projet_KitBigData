@@ -1,8 +1,8 @@
 
 import unittest
-from modules.gestion_des_taches import GestionnaireTaches
 from unittest.mock import Mock
 import csv
+from modules.gestion_des_taches import GestionnaireTaches
 from modules.supprimer_taches import SupprimerTache
 
 
