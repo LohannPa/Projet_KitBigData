@@ -1,6 +1,6 @@
 import os
 import pandas as pd
-
+import csv
 
 class Tache:
     """
@@ -69,5 +69,40 @@ class GestionnaireTaches:
         
         return taches
     
+    def modifier_statut(self, nom: str):
+        """
+        Modifie le statut terminee d'une taches designee:
+            1. de l'instance cree par la classe GestionnaireTaches
+            2. du fichier CSV ou les donnees taches sont sauvegardees
 
+        Args:
+            nom (str): Le nom de la tâche.
 
+        Returns:
+            Aucun return.
+            Modifie directement le statut terminee des taches.
+        """
+        
+        # Modification de l'objet taches
+        for tache in self.taches:
+            if tache.nom == nom and tache.terminee == False:
+                tache.terminee = True
+            elif tache.nom ==  nom and tache.terminee == True:
+                tache.terminee = False
+
+        # Modifier le statut et garder les donnees dans la liste rows
+        rows = []
+        with open (self.fichier_csv, 'r', newline = '') as csv_file:
+            csv_reader = csv.reader(csv_file)
+            for row in csv_reader:
+                if row[0] == nom and row[2] == 'False':
+                    row[2] = 'True'
+                elif row[0] == nom and row[2] == 'True':
+                    row[2] = 'False'
+                rows.append(row)
+            print(rows)
+        
+        # Ecrire la liste rows au fichier csv
+        with open (self.fichier_csv, 'w', newline = '') as csv_file:
+            csv_writer = csv.writer(csv_file)
+            csv_writer.writerows(rows)
