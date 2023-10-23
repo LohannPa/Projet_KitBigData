@@ -1,5 +1,23 @@
+"""module permettant d'utiliser des tâches relatifs au système"""
 import os
+import logging
 import pandas as pd
+
+# Configure the logging
+log_filename = 'tache_logs.log'  # Specify the log file name
+
+logging.basicConfig(
+    # Set the desired logging level (e.g., INFO, DEBUG, ERROR)
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.StreamHandler(),  # Log to the console
+        logging.FileHandler(log_filename)  # Log to a file
+    ]
+)
+
+# Create a logger for your module
+logger = logging.getLogger(__name__)
 
 
 class Tache:
@@ -10,12 +28,15 @@ class Tache:
     l'etat de la tache est == False par défaut
     """
 
-    def __init__(self, nom, description):	
-        self.nom = nom	
-        self.description = description	
+    def __init__(self, nom, description):
+        self.nom = nom
+        self.description = description
         self.terminee = False
 
+
 class GestionnaireTaches:
+    """classe permettant d'ajouter et sauvegarder les tâches
+    """
 
     def __init__(self, fichier_csv):
         self.fichier_csv = fichier_csv
@@ -37,6 +58,7 @@ class GestionnaireTaches:
         tache = Tache(nom, description)
         self.taches.append(tache)
         self.sauvegarder_taches()
+        logger.info("Added task: %s", nom)
 
     def sauvegarder_taches(self):
         """
@@ -52,22 +74,20 @@ class GestionnaireTaches:
             "terminee": [tache.terminee for tache in self.taches],
         }
         df = pd.DataFrame(donnees)
-        
+
         # Enregistrez le DataFrame dans le fichier CSV
         df.to_csv(self.fichier_csv, index=False)
+        logger.info("Saved tasks to CSV file")
 
     def charger_taches(self):
         # Chargez les données à partir du fichier CSV dans un DataFrame
         df = pd.read_csv(self.fichier_csv)
-        
+
         # Créez des instances de la classe Tache à partir des données du DataFrame
         taches = []
         for index, row in df.iterrows():
             tache = Tache(row['nom'], row['description'])
             tache.terminee = row['terminee']
             taches.append(tache)
-        
+        logger.info("Loaded tasks from CSV file")
         return taches
-    
-
-

@@ -1,0 +1,56 @@
+name: Run Tests
+
+on:
+  push:
+    branches:
+      - main  # Adjust the branch name as needed
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.11  # Specify the Python version you need
+
+    - name: Install dependencies
+      run: pip install -r requirements.txt
+
+    - name: Run tests
+      run: python -m unittest tests.test_gestionnaire_taches.TestGestionnaireTaches.test_ajouter_tache
+
+    - name: Post-test cleanup
+      run: |
+        if [ $? -ne 0 ]; then
+          echo "ajouter tache Test failed. Preventing the push."
+          exit 1
+        fi
+
+  supprimer_tache:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.11  # Specify the Python version you need
+
+    - name: Install dependencies
+      run: pip install -r requirements.txt
+
+    - name: Run supprimer_tache test
+      run: python -m unittest tests.test_gestionnaire_taches.TestSupprimerTaches.test_supprimer_tache
+
+    - name: Post-test cleanup
+      run: |
+        if [ $? -ne 0 ]; then
+          echo "supprimer_tache test failed. Preventing the push."
+          exit 1
