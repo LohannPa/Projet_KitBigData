@@ -1,0 +1,8 @@
+2023-10-22 13:46:29,977 - modules.gestion_des_taches - INFO - Loaded tasks from CSV file
+2023-10-22 13:46:29,979 - modules.gestion_des_taches - INFO - Saved tasks to CSV file
+2023-10-22 13:46:29,980 - modules.gestion_des_taches - INFO - Saved tasks to CSV file
+2023-10-22 13:47:00,980 - modules.gestion_des_taches - INFO - Loaded tasks from CSV file
+2023-10-22 13:47:00,981 - modules.gestion_des_taches - INFO - Saved tasks to CSV file
+2023-10-22 13:47:00,981 - modules.gestion_des_taches - INFO - Added task: tache1
+2023-10-22 13:47:00,982 - modules.gestion_des_taches - INFO - Saved tasks to CSV file
+2023-10-22 13:47:00,982 - modules.gestion_des_taches - INFO - Added task: tache2
