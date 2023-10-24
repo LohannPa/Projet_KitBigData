@@ -12,11 +12,14 @@ chemin_fichier_csv = os.path.join(dossier_data, nom_fichier_data)
 
 # Exemple d'utilisation
 if __name__ == "__main__":
-    gestionnaire = GestionnaireTaches(chemin_fichier_csv)
-    supprimeur = SupprimerTache(gestionnaire)
+    try:
+        gestionnaire = GestionnaireTaches(chemin_fichier_csv)
+        supprimeur = SupprimerTache(gestionnaire)
 
-    gestionnaire.ajouter_tache("tache1", "Description de la tâche 1")
-    gestionnaire.ajouter_tache("tache2", "Description de la tâche 2")
+        gestionnaire.ajouter_tache("tache1", "Description de la tâche 1")
+        gestionnaire.ajouter_tache("tache2", "Description de la tâche 2")
 
-    # supprimeur.supprimer_tache("tache1")
-    # supprimeur.supprimer_tache("tache2")
+        # supprimeur.supprimer_tache("tache1")
+        # supprimeur.supprimer_tache("tache2")
+    except Exception as e:
+        print(f"Une erreur s'est produite : {e}")

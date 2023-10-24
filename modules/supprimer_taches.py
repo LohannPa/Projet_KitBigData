@@ -16,6 +16,9 @@ class SupprimerTache:
         :param nom_tache: Le nom de la tâche à supprimer.
         :return: Aucune valeur de retour.
         """
-        self.gestionnaire.taches = [
-            tache for tache in self.gestionnaire.taches if tache.nom != nom_tache]
-        self.gestionnaire.sauvegarder_taches()
+        try:
+            self.gestionnaire.taches = [
+                tache for tache in self.gestionnaire.taches if tache.nom != nom_tache]
+            self.gestionnaire.sauvegarder_taches()
+        except Exception as e:
+            print(f"Erreur lors de la suppression de la tâche : {e}")

@@ -2,6 +2,7 @@
 import os
 import logging
 import pandas as pd
+import csv
 
 # Configure the logging
 log_filename = 'tache_logs.log'  # Specify the log file name
@@ -55,10 +56,13 @@ class GestionnaireTaches:
         :param description: La description de la tâche.
         :return: Aucune valeur de retour.
         """
-        tache = Tache(nom, description)
-        self.taches.append(tache)
-        self.sauvegarder_taches()
-        logger.info("Added task: %s", nom)
+        try:
+            tache = Tache(nom, description)
+            self.taches.append(tache)
+            self.sauvegarder_taches()
+            logger.info("Added task: %s", nom)
+        except Exception as e:
+            logger.error("Erreur lors de l'ajout de la tâche: %s", e)
 
     def sauvegarder_taches(self):
         """
@@ -68,29 +72,35 @@ class GestionnaireTaches:
         :param description: La description de la tâche.
         :return: Aucune valeur de retour.
         """
-        donnees = {
-            "nom": [tache.nom for tache in self.taches],
-            "description": [tache.description for tache in self.taches],
-            "terminee": [tache.terminee for tache in self.taches],
-        }
-        df = pd.DataFrame(donnees)
+        try:
+            donnees = {
+                "nom": [tache.nom for tache in self.taches],
+                "description": [tache.description for tache in self.taches],
+                "terminee": [tache.terminee for tache in self.taches],
+            }
+            df = pd.DataFrame(donnees)
 
-        # Enregistrez le DataFrame dans le fichier CSV
-        df.to_csv(self.fichier_csv, index=False)
-        logger.info("Saved tasks to CSV file")
+            # Enregistrez le DataFrame dans le fichier CSV
+            df.to_csv(self.fichier_csv, index=False)
+            logger.info("Saved tasks to CSV file")
+        except Exception as e:
+            logger.error("Erreur lors de la sauvegarde de la tâche: %s", e)
 
     def charger_taches(self):
-        # Chargez les données à partir du fichier CSV dans un DataFrame
-        df = pd.read_csv(self.fichier_csv)
+        try:
+            # Chargez les données à partir du fichier CSV dans un DataFrame
+            df = pd.read_csv(self.fichier_csv)
 
-        # Créez des instances de la classe Tache à partir des données du DataFrame
-        taches = []
-        for index, row in df.iterrows():
-            tache = Tache(row['nom'], row['description'])
-            tache.terminee = row['terminee']
-            taches.append(tache)
-        logger.info("Loaded tasks from CSV file")
-        return taches
+            # Créez des instances de la classe Tache à partir des données du DataFrame
+            taches = []
+            for index, row in df.iterrows():
+                tache = Tache(row['nom'], row['description'])
+                tache.terminee = row['terminee']
+                taches.append(tache)
+            logger.info("Loaded tasks from CSV file")
+            return taches
+        except Exception as e:
+            logger.error("Erreur lors du chargement de la tâche: %s", e)
 
     def modifier_statut(self, nom: str):
         """
@@ -105,27 +115,30 @@ class GestionnaireTaches:
             Aucun return.
             Modifie directement le statut terminee des taches.
         """
+        try:
+            # Modification de l'objet taches
+            for tache in self.taches:
+                if tache.nom == nom and tache.terminee == False:
+                    tache.terminee = True
+                elif tache.nom == nom and tache.terminee == True:
+                    tache.terminee = False
 
-        # Modification de l'objet taches
-        for tache in self.taches:
-            if tache.nom == nom and tache.terminee == False:
-                tache.terminee = True
-            elif tache.nom == nom and tache.terminee == True:
-                tache.terminee = False
+            # Modifier le statut et garder les donnees dans la liste rows
+            rows = []
+            with open(self.fichier_csv, 'r', newline='') as csv_file:
+                csv_reader = csv.reader(csv_file)
+                for row in csv_reader:
+                    if row[0] == nom and row[2] == 'False':
+                        row[2] = 'True'
+                    elif row[0] == nom and row[2] == 'True':
+                        row[2] = 'False'
+                    rows.append(row)
+                print(rows)
 
-        # Modifier le statut et garder les donnees dans la liste rows
-        rows = []
-        with open(self.fichier_csv, 'r', newline='') as csv_file:
-            csv_reader = csv.reader(csv_file)
-            for row in csv_reader:
-                if row[0] == nom and row[2] == 'False':
-                    row[2] = 'True'
-                elif row[0] == nom and row[2] == 'True':
-                    row[2] = 'False'
-                rows.append(row)
-            print(rows)
-
-        # Ecrire la liste rows au fichier csv
-        with open(self.fichier_csv, 'w', newline='') as csv_file:
-            csv_writer = csv.writer(csv_file)
-            csv_writer.writerows(rows)
+            # Ecrire la liste rows au fichier csv
+            with open(self.fichier_csv, 'w', newline='') as csv_file:
+                csv_writer = csv.writer(csv_file)
+                csv_writer.writerows(rows)
+        except Exception as e:
+            logger.error(
+                "Erreur survenue lors de la modification du statut de la tâche: %s", e)
