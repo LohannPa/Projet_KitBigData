@@ -14,7 +14,7 @@ jobs:
       - name: Set up Python  # Step to set up the Python environment
         uses: actions/setup-python@v2  # Use GitHub Action to set up Python
         with:
-          python-version: 3.10  # Specify the Python version to use (e.g., 3.8)
+          python-version: 3.11  # Specify the Python version to use (e.g., 3.8)
 
       - name: Install dependencies  # Step to install necessary dependencies
         run: |
@@ -24,6 +24,10 @@ jobs:
       - name: Run Flake8  # Step to run the Flake8 tool
         run: |
           flake8 .  # Check all Python files in the current directory for PEP 8 compliance
+
+      - name: Block push on failure
+        if: failure()  # This step will only run if the previous step fails
+        run: echo "Flake8 check failed. Blocking the push." && exit 1
 
   docstring_check:
     name: Check Docstrings
@@ -36,13 +40,17 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: 3.10  # Replace 'x' with your desired Python version
+          python-version: 3.11  # Replace 'x' with your desired Python version
 
       - name: Install pydocstyle
         run: pip install pydocstyle
 
       - name: Run docstring checks
         run: python check_docstrings.py
+
+      - name: Block push on failure
+        if: failure()  # This step will only run if the previous step fails  
+        run: echo "Check Docstrings check failed. Blocking the push." && exit 1
 
   unittest:
     name: Run Python Unit Tests
@@ -55,10 +63,14 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: 3.10  # Set your desired Python version
+          python-version: 3.11  # Set your desired Python version
 
       - name: Install dependencies
         run: pip install -r requirements.txt  # Install project dependencies (if any)
 
       - name: Run unit tests
         run: python -m unittest discover tests
+
+      - name: Block push on failure
+        if: failure()  # This step will only run if the previous step fails  
+        run: echo "unit tests check failed. Blocking the push." && exit 1
