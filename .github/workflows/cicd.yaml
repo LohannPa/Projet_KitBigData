@@ -70,7 +70,3 @@ jobs:
 
       - name: Run unit tests
         run: python -m unittest discover tests
-
-      - name: Block push on failure
-        if: failure()  # This step will only run if the previous step fails  
-        run: echo "unit tests check failed. Blocking the push." && exit 1

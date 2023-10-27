@@ -4,6 +4,7 @@ import logging
 import pandas as pd
 import csv
 
+
 # Configure the logging
 log_filename = 'tache_logs.log'  # Specify the log file name
 
@@ -23,10 +24,10 @@ logger = logging.getLogger(__name__)
 
 class Tache:
     """
-    Classe pour représenter une tâche.
+    Classe pour représenter une tâche
 
-    Cette classe contient des attributs pour le nom, la description et l'état de la tâche.
-    l'etat de la tache est == False par défaut
+    Contient des attributs: nom, description et état de la tâche
+    l'etat de la tache == False par défaut
     """
 
     def __init__(self, nom, description):
@@ -45,7 +46,8 @@ class GestionnaireTaches:
             # Si le fichier CSV existe, chargez les données dans self.taches
             self.taches = self.charger_taches()
         else:
-            # Si le fichier n'existe pas, initialisez self.taches comme une liste vide
+            # Si le fichier n'existe pas,
+            # initialisez self.taches comme une liste vide
             self.taches = []
 
     def ajouter_tache(self, nom, description):
@@ -88,10 +90,10 @@ class GestionnaireTaches:
 
     def charger_taches(self):
         try:
-            # Chargez les données à partir du fichier CSV dans un DataFrame
+            # Charger les données à partir du fichier CSV dans un DataFrame
             df = pd.read_csv(self.fichier_csv)
 
-            # Créez des instances de la classe Tache à partir des données du DataFrame
+            # Créer des instances de classe Tache à partir du DataFrame
             taches = []
             for index, row in df.iterrows():
                 tache = Tache(row['nom'], row['description'])
@@ -101,6 +103,25 @@ class GestionnaireTaches:
             return taches
         except Exception as e:
             logger.error("Erreur lors du chargement de la tâche: %s", e)
+            donnees = {
+            "nom": [tache.nom for tache in self.taches],
+            "description": [tache.description for tache in self.taches],
+            "terminee": [tache.terminee for tache in self.taches],
+        }
+        df = pd.DataFrame(donnees)
+        # Enregistrez le DataFrame dans le fichier CSV
+        df.to_csv(self.fichier_csv, index=False)
+
+    def charger_taches(self):
+        # Charger les données à partir du fichier CSV dans un DataFrame
+        df = pd.read_csv(self.fichier_csv)
+        # Créer des instances de classe Tache à partir du DataFrame
+        taches = []
+        for index, row in df.iterrows():
+            tache = Tache(row['nom'], row['description'])
+            tache.terminee = row['terminee']
+            taches.append(tache)
+        return taches
 
     def modifier_statut(self, nom: str):
         """
@@ -118,9 +139,9 @@ class GestionnaireTaches:
         try:
             # Modification de l'objet taches
             for tache in self.taches:
-                if tache.nom == nom and tache.terminee == False:
+                if tache.nom == nom and tache.terminee is False:
                     tache.terminee = True
-                elif tache.nom == nom and tache.terminee == True:
+                elif tache.nom == nom and tache.terminee is True:
                     tache.terminee = False
 
             # Modifier le statut et garder les donnees dans la liste rows
