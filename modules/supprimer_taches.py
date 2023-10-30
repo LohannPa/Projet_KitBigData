@@ -1,7 +1,3 @@
-import os
-import pandas as pd
-
-
 class SupprimerTache:
     """classer permettant de supprimer une tache
     """
@@ -18,7 +14,8 @@ class SupprimerTache:
         """
         try:
             self.gestionnaire.taches = [
-                tache for tache in self.gestionnaire.taches if tache.nom != nom_tache]
+                tache for tache in self.gestionnaire.taches if tache.nom != nom_tache
+                ]
             self.gestionnaire.sauvegarder_taches()
         except Exception as e:
             print(f"Erreur lors de la suppression de la tâche : {e}")

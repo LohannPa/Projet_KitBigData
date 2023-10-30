@@ -104,24 +104,13 @@ class GestionnaireTaches:
         except Exception as e:
             logger.error("Erreur lors du chargement de la tâche: %s", e)
             donnees = {
-            "nom": [tache.nom for tache in self.taches],
-            "description": [tache.description for tache in self.taches],
-            "terminee": [tache.terminee for tache in self.taches],
-        }
+                "nom": [tache.nom for tache in self.taches],
+                "description": [tache.description for tache in self.taches],
+                "terminee": [tache.terminee for tache in self.taches],
+                }
         df = pd.DataFrame(donnees)
         # Enregistrez le DataFrame dans le fichier CSV
         df.to_csv(self.fichier_csv, index=False)
-
-    def charger_taches(self):
-        # Charger les données à partir du fichier CSV dans un DataFrame
-        df = pd.read_csv(self.fichier_csv)
-        # Créer des instances de classe Tache à partir du DataFrame
-        taches = []
-        for index, row in df.iterrows():
-            tache = Tache(row['nom'], row['description'])
-            tache.terminee = row['terminee']
-            taches.append(tache)
-        return taches
 
     def modifier_statut(self, nom: str):
         """
@@ -162,4 +151,4 @@ class GestionnaireTaches:
                 csv_writer.writerows(rows)
         except Exception as e:
             logger.error(
-                "Erreur survenue lors de la modification du statut de la tâche: %s", e)
+                "Erreur lors modification du statut de la tâche: %s", e)
