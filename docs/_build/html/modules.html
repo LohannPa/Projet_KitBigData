@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>modules package &mdash; Documentation TodoList App Project 1.0.0</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=27a00d72"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+        <script src="_static/translations.js?v=d99ca74e"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="prev" title="Welcome to ToDoList App Project’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            TodoList App Project
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">modules package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-modules.gestion_des_taches">modules.gestion_des_taches module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#modules.gestion_des_taches.GestionnaireTaches"><code class="docutils literal notranslate"><span class="pre">GestionnaireTaches</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#modules.gestion_des_taches.GestionnaireTaches.ajouter_tache"><code class="docutils literal notranslate"><span class="pre">GestionnaireTaches.ajouter_tache()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#modules.gestion_des_taches.GestionnaireTaches.charger_taches"><code class="docutils literal notranslate"><span class="pre">GestionnaireTaches.charger_taches()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#modules.gestion_des_taches.GestionnaireTaches.modifier_statut"><code class="docutils literal notranslate"><span class="pre">GestionnaireTaches.modifier_statut()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#modules.gestion_des_taches.GestionnaireTaches.sauvegarder_taches"><code class="docutils literal notranslate"><span class="pre">GestionnaireTaches.sauvegarder_taches()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#modules.gestion_des_taches.Tache"><code class="docutils literal notranslate"><span class="pre">Tache</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-modules.supprimer_taches">modules.supprimer_taches module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#modules.supprimer_taches.SupprimerTache"><code class="docutils literal notranslate"><span class="pre">SupprimerTache</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#modules.supprimer_taches.SupprimerTache.supprimer_tache"><code class="docutils literal notranslate"><span class="pre">SupprimerTache.supprimer_tache()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">TodoList App Project</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">modules package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/modules.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="modules-package">
+<h1>modules package<a class="headerlink" href="#modules-package" title="Lien permanent vers cette rubrique"></a></h1>
+<section id="module-modules.gestion_des_taches">
+<span id="modules-gestion-des-taches-module"></span><h2>modules.gestion_des_taches module<a class="headerlink" href="#module-modules.gestion_des_taches" title="Lien permanent vers cette rubrique"></a></h2>
+<p>module permettant d’utiliser des tâches relatifs au système</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="modules.gestion_des_taches.GestionnaireTaches">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">modules.gestion_des_taches.</span></span><span class="sig-name descname"><span class="pre">GestionnaireTaches</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fichier_csv</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modules/gestion_des_taches.html#GestionnaireTaches"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modules.gestion_des_taches.GestionnaireTaches" title="Lien permanent vers cette définition"></a></dt>
+<dd><p>Bases : <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>classe permettant d’ajouter et sauvegarder les tâches</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="modules.gestion_des_taches.GestionnaireTaches.ajouter_tache">
+<span class="sig-name descname"><span class="pre">ajouter_tache</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modules/gestion_des_taches.html#GestionnaireTaches.ajouter_tache"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modules.gestion_des_taches.GestionnaireTaches.ajouter_tache" title="Lien permanent vers cette définition"></a></dt>
+<dd><p>Ajoute une nouvelle tâche à la liste de tâches.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nom</strong> – Le nom de la tâche.</p></li>
+<li><p><strong>description</strong> – La description de la tâche.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Renvoie<span class="colon">:</span></dt>
+<dd class="field-even"><p>Aucune valeur de retour.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modules.gestion_des_taches.GestionnaireTaches.charger_taches">
+<span class="sig-name descname"><span class="pre">charger_taches</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/modules/gestion_des_taches.html#GestionnaireTaches.charger_taches"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modules.gestion_des_taches.GestionnaireTaches.charger_taches" title="Lien permanent vers cette définition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modules.gestion_des_taches.GestionnaireTaches.modifier_statut">
+<span class="sig-name descname"><span class="pre">modifier_statut</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nom</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modules/gestion_des_taches.html#GestionnaireTaches.modifier_statut"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modules.gestion_des_taches.GestionnaireTaches.modifier_statut" title="Lien permanent vers cette définition"></a></dt>
+<dd><dl class="simple">
+<dt>Modifie le statut terminee d’une taches designee:</dt><dd><ol class="arabic simple">
+<li><p>de l’instance cree par la classe GestionnaireTaches</p></li>
+<li><p>du fichier CSV ou les donnees taches sont sauvegardees</p></li>
+</ol>
+</dd>
+<dt>Args:</dt><dd><p>nom (str): Le nom de la tâche.</p>
+</dd>
+<dt>Returns:</dt><dd><p>Aucun return.
+Modifie directement le statut terminee des taches.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modules.gestion_des_taches.GestionnaireTaches.sauvegarder_taches">
+<span class="sig-name descname"><span class="pre">sauvegarder_taches</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/modules/gestion_des_taches.html#GestionnaireTaches.sauvegarder_taches"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modules.gestion_des_taches.GestionnaireTaches.sauvegarder_taches" title="Lien permanent vers cette définition"></a></dt>
+<dd><p>Ajoute une nouvelle tâche à la liste de tâches.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nom</strong> – Le nom de la tâche.</p></li>
+<li><p><strong>description</strong> – La description de la tâche.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Renvoie<span class="colon">:</span></dt>
+<dd class="field-even"><p>Aucune valeur de retour.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="modules.gestion_des_taches.Tache">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">modules.gestion_des_taches.</span></span><span class="sig-name descname"><span class="pre">Tache</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modules/gestion_des_taches.html#Tache"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modules.gestion_des_taches.Tache" title="Lien permanent vers cette définition"></a></dt>
+<dd><p>Bases : <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Classe pour représenter une tâche</p>
+<p>Contient des attributs: nom, description et état de la tâche
+l’etat de la tache == False par défaut</p>
+</dd></dl>
+
+</section>
+<section id="module-modules.supprimer_taches">
+<span id="modules-supprimer-taches-module"></span><h2>modules.supprimer_taches module<a class="headerlink" href="#module-modules.supprimer_taches" title="Lien permanent vers cette rubrique"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="modules.supprimer_taches.SupprimerTache">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">modules.supprimer_taches.</span></span><span class="sig-name descname"><span class="pre">SupprimerTache</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gestionnaire</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modules/supprimer_taches.html#SupprimerTache"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modules.supprimer_taches.SupprimerTache" title="Lien permanent vers cette définition"></a></dt>
+<dd><p>Bases : <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>classer permettant de supprimer une tache</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="modules.supprimer_taches.SupprimerTache.supprimer_tache">
+<span class="sig-name descname"><span class="pre">supprimer_tache</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nom_tache</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modules/supprimer_taches.html#SupprimerTache.supprimer_tache"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modules.supprimer_taches.SupprimerTache.supprimer_tache" title="Lien permanent vers cette définition"></a></dt>
+<dd><p>Supprime une tâche par son nom.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>nom_tache</strong> – Le nom de la tâche à supprimer.</p>
+</dd>
+<dt class="field-even">Renvoie<span class="colon">:</span></dt>
+<dd class="field-even"><p>Aucune valeur de retour.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to ToDoList App Project’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2023, YBAMY.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
