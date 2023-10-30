@@ -70,11 +70,10 @@
            <div itemprop="articleBody">
              
   <h1>Code source de modules.gestion_des_taches</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;module permettant d&#39;utiliser des tâches relatifs au système&quot;&quot;&quot;</span>
+<span></span><span class="sd">&quot;&quot;&quot;Module permettant d&#39;utiliser des tâches relatives au système.&quot;&quot;&quot;</span>
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">logging</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">csv</span>
 
 
 <span class="c1"># Configure the logging</span>
@@ -96,23 +95,35 @@
 
 <div class="viewcode-block" id="Tache"><a class="viewcode-back" href="../../modules.html#modules.gestion_des_taches.Tache">[docs]</a><span class="k">class</span> <span class="nc">Tache</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Classe pour représenter une tâche</span>
+<span class="sd">    Classe pour représenter une tâche.</span>
 
-<span class="sd">    Contient des attributs: nom, description et état de la tâche</span>
-<span class="sd">    l&#39;etat de la tache == False par défaut</span>
+<span class="sd">    Contient des attributs: nom, description et état de la tâche.</span>
+<span class="sd">    L&#39;état de la tâche est False par défaut.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nom</span><span class="p">,</span> <span class="n">description</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initialise une instance de la classe Tache.</span>
+
+<span class="sd">        :param nom: Le nom de la tâche.</span>
+<span class="sd">        :param description: La description de la tâche.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">nom</span> <span class="o">=</span> <span class="n">nom</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="n">description</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">terminee</span> <span class="o">=</span> <span class="kc">False</span></div>
 
 
 <div class="viewcode-block" id="GestionnaireTaches"><a class="viewcode-back" href="../../modules.html#modules.gestion_des_taches.GestionnaireTaches">[docs]</a><span class="k">class</span> <span class="nc">GestionnaireTaches</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;classe permettant d&#39;ajouter et sauvegarder les tâches</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Classe permettant d&#39;ajouter et sauvegarder les tâches.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fichier_csv</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initialise une instance de la classe GestionnaireTaches.</span>
+
+<span class="sd">        :param fichier_csv: Le nom du fichier CSV pour le stockage des tâches.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">fichier_csv</span> <span class="o">=</span> <span class="n">fichier_csv</span>
         <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">fichier_csv</span><span class="p">):</span>
             <span class="c1"># Si le fichier CSV existe, chargez les données dans self.taches</span>
@@ -140,10 +151,8 @@
 
 <div class="viewcode-block" id="GestionnaireTaches.sauvegarder_taches"><a class="viewcode-back" href="../../modules.html#modules.gestion_des_taches.GestionnaireTaches.sauvegarder_taches">[docs]</a>    <span class="k">def</span> <span class="nf">sauvegarder_taches</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Ajoute une nouvelle tâche à la liste de tâches.</span>
+<span class="sd">        Sauvegarde les tâches dans un fichier CSV.</span>
 
-<span class="sd">        :param nom: Le nom de la tâche.</span>
-<span class="sd">        :param description: La description de la tâche.</span>
 <span class="sd">        :return: Aucune valeur de retour.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
@@ -161,11 +170,16 @@
             <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;Erreur lors de la sauvegarde de la tâche: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="GestionnaireTaches.charger_taches"><a class="viewcode-back" href="../../modules.html#modules.gestion_des_taches.GestionnaireTaches.charger_taches">[docs]</a>    <span class="k">def</span> <span class="nf">charger_taches</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Charge les tâches à partir d&#39;un fichier CSV.</span>
+
+<span class="sd">        :return: Une liste d&#39;instances de Tache.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="c1"># Charger les données à partir du fichier CSV dans un DataFrame</span>
             <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fichier_csv</span><span class="p">)</span>
 
-            <span class="c1"># Créer des instances de classe Tache à partir du DataFrame</span>
+            <span class="c1"># Crée des instances de classe Tache à partir du DataFrame</span>
             <span class="n">taches</span> <span class="o">=</span> <span class="p">[]</span>
             <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
                 <span class="n">tache</span> <span class="o">=</span> <span class="n">Tache</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;nom&#39;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;description&#39;</span><span class="p">])</span>
@@ -184,46 +198,34 @@
         <span class="c1"># Enregistrez le DataFrame dans le fichier CSV</span>
         <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fichier_csv</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="GestionnaireTaches.modifier_statut"><a class="viewcode-back" href="../../modules.html#modules.gestion_des_taches.GestionnaireTaches.modifier_statut">[docs]</a>    <span class="k">def</span> <span class="nf">modifier_statut</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nom</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<div class="viewcode-block" id="GestionnaireTaches.changer_statut_tache"><a class="viewcode-back" href="../../modules.html#modules.gestion_des_taches.GestionnaireTaches.changer_statut_tache">[docs]</a>    <span class="k">def</span> <span class="nf">changer_statut_tache</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nom</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Modifie le statut terminee d&#39;une taches designee:</span>
-<span class="sd">            1. de l&#39;instance cree par la classe GestionnaireTaches</span>
-<span class="sd">            2. du fichier CSV ou les donnees taches sont sauvegardees</span>
+<span class="sd">        Change l&#39;état de la tâche avec le nom donné.</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            nom (str): Le nom de la tâche.</span>
-
-<span class="sd">        Returns:</span>
-<span class="sd">            Aucun return.</span>
-<span class="sd">            Modifie directement le statut terminee des taches.</span>
+<span class="sd">        :param nom: Le nom de la tâche à mettre à jour.</span>
+<span class="sd">        :return: Aucune valeur de retour.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="c1"># Modification de l&#39;objet taches</span>
-            <span class="k">for</span> <span class="n">tache</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">taches</span><span class="p">:</span>
-                <span class="k">if</span> <span class="n">tache</span><span class="o">.</span><span class="n">nom</span> <span class="o">==</span> <span class="n">nom</span> <span class="ow">and</span> <span class="n">tache</span><span class="o">.</span><span class="n">terminee</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
-                    <span class="n">tache</span><span class="o">.</span><span class="n">terminee</span> <span class="o">=</span> <span class="kc">True</span>
-                <span class="k">elif</span> <span class="n">tache</span><span class="o">.</span><span class="n">nom</span> <span class="o">==</span> <span class="n">nom</span> <span class="ow">and</span> <span class="n">tache</span><span class="o">.</span><span class="n">terminee</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
-                    <span class="n">tache</span><span class="o">.</span><span class="n">terminee</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">for</span> <span class="n">tache</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">taches</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">tache</span><span class="o">.</span><span class="n">nom</span> <span class="o">==</span> <span class="n">nom</span><span class="p">:</span>
+                <span class="n">tache</span><span class="o">.</span><span class="n">terminee</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">tache</span><span class="o">.</span><span class="n">terminee</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">sauvegarder_taches</span><span class="p">()</span></div>
 
-            <span class="c1"># Modifier le statut et garder les donnees dans la liste rows</span>
-            <span class="n">rows</span> <span class="o">=</span> <span class="p">[]</span>
-            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fichier_csv</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csv_file</span><span class="p">:</span>
-                <span class="n">csv_reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">csv_file</span><span class="p">)</span>
-                <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">csv_reader</span><span class="p">:</span>
-                    <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">nom</span> <span class="ow">and</span> <span class="n">row</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;False&#39;</span><span class="p">:</span>
-                        <span class="n">row</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;True&#39;</span>
-                    <span class="k">elif</span> <span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">nom</span> <span class="ow">and</span> <span class="n">row</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;True&#39;</span><span class="p">:</span>
-                        <span class="n">row</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;False&#39;</span>
-                    <span class="n">rows</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
-                <span class="nb">print</span><span class="p">(</span><span class="n">rows</span><span class="p">)</span>
+<div class="viewcode-block" id="GestionnaireTaches.supprimer_tache"><a class="viewcode-back" href="../../modules.html#modules.gestion_des_taches.GestionnaireTaches.supprimer_tache">[docs]</a>    <span class="k">def</span> <span class="nf">supprimer_tache</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nom</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Supprime une tâche de la liste.</span>
 
-            <span class="c1"># Ecrire la liste rows au fichier csv</span>
-            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fichier_csv</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csv_file</span><span class="p">:</span>
-                <span class="n">csv_writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">csv_file</span><span class="p">)</span>
-                <span class="n">csv_writer</span><span class="o">.</span><span class="n">writerows</span><span class="p">(</span><span class="n">rows</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
-                <span class="s2">&quot;Erreur lors modification du statut de la tâche: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span></div></div>
+<span class="sd">        :param nom: Le nom de la tâche à supprimer.</span>
+<span class="sd">        :return: Aucune valeur de retour.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">tache_a_supprimer</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">for</span> <span class="n">tache</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">taches</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">tache</span><span class="o">.</span><span class="n">nom</span> <span class="o">==</span> <span class="n">nom</span><span class="p">:</span>
+                <span class="n">tache_a_supprimer</span> <span class="o">=</span> <span class="n">tache</span>
+                <span class="k">break</span>
+
+        <span class="k">if</span> <span class="n">tache_a_supprimer</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">taches</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">tache_a_supprimer</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">sauvegarder_taches</span><span class="p">()</span></div></div>
 </pre></div>
 
            </div>

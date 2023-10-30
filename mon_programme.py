@@ -2,6 +2,7 @@ import os
 from modules.supprimer_taches import SupprimerTache
 from modules.gestion_des_taches import GestionnaireTaches
 
+
 nom_fichier_data = 'data_taches.csv'
 dossier_data = os.path.join(os.path.dirname(__file__), 'data')
 chemin_fichier_csv = os.path.join(dossier_data, nom_fichier_data)

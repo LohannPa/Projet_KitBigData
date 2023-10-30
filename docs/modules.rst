@@ -18,5 +18,14 @@ modules.supprimer\_taches module
    :members:
    :undoc-members:
    :show-inheritance:
+   
+modules.app\_gui
+--------------------------------
+
+.. automodule:: modules.app_gui
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 
 
