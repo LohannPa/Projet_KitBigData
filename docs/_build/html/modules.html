@@ -48,9 +48,10 @@
 <li class="toctree-l2"><a class="reference internal" href="#module-modules.gestion_des_taches">modules.gestion_des_taches module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#modules.gestion_des_taches.GestionnaireTaches"><code class="docutils literal notranslate"><span class="pre">GestionnaireTaches</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#modules.gestion_des_taches.GestionnaireTaches.ajouter_tache"><code class="docutils literal notranslate"><span class="pre">GestionnaireTaches.ajouter_tache()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#modules.gestion_des_taches.GestionnaireTaches.changer_statut_tache"><code class="docutils literal notranslate"><span class="pre">GestionnaireTaches.changer_statut_tache()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#modules.gestion_des_taches.GestionnaireTaches.charger_taches"><code class="docutils literal notranslate"><span class="pre">GestionnaireTaches.charger_taches()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#modules.gestion_des_taches.GestionnaireTaches.modifier_statut"><code class="docutils literal notranslate"><span class="pre">GestionnaireTaches.modifier_statut()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#modules.gestion_des_taches.GestionnaireTaches.sauvegarder_taches"><code class="docutils literal notranslate"><span class="pre">GestionnaireTaches.sauvegarder_taches()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#modules.gestion_des_taches.GestionnaireTaches.supprimer_tache"><code class="docutils literal notranslate"><span class="pre">GestionnaireTaches.supprimer_tache()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#modules.gestion_des_taches.Tache"><code class="docutils literal notranslate"><span class="pre">Tache</span></code></a></li>
@@ -59,6 +60,16 @@
 <li class="toctree-l2"><a class="reference internal" href="#module-modules.supprimer_taches">modules.supprimer_taches module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#modules.supprimer_taches.SupprimerTache"><code class="docutils literal notranslate"><span class="pre">SupprimerTache</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#modules.supprimer_taches.SupprimerTache.supprimer_tache"><code class="docutils literal notranslate"><span class="pre">SupprimerTache.supprimer_tache()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-modules.app_gui">modules.app_gui</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#modules.app_gui.InterfaceUtilisateur"><code class="docutils literal notranslate"><span class="pre">InterfaceUtilisateur</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#modules.app_gui.InterfaceUtilisateur.afficher_taches"><code class="docutils literal notranslate"><span class="pre">InterfaceUtilisateur.afficher_taches()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#modules.app_gui.InterfaceUtilisateur.ajouter_tache"><code class="docutils literal notranslate"><span class="pre">InterfaceUtilisateur.ajouter_tache()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#modules.app_gui.InterfaceUtilisateur.changer_statut_tache"><code class="docutils literal notranslate"><span class="pre">InterfaceUtilisateur.changer_statut_tache()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#modules.app_gui.InterfaceUtilisateur.supprimer_tache"><code class="docutils literal notranslate"><span class="pre">InterfaceUtilisateur.supprimer_tache()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -95,12 +106,12 @@
 <h1>modules package<a class="headerlink" href="#modules-package" title="Lien permanent vers cette rubrique"></a></h1>
 <section id="module-modules.gestion_des_taches">
 <span id="modules-gestion-des-taches-module"></span><h2>modules.gestion_des_taches module<a class="headerlink" href="#module-modules.gestion_des_taches" title="Lien permanent vers cette rubrique"></a></h2>
-<p>module permettant d’utiliser des tâches relatifs au système</p>
+<p>Module permettant d’utiliser des tâches relatives au système.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="modules.gestion_des_taches.GestionnaireTaches">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">modules.gestion_des_taches.</span></span><span class="sig-name descname"><span class="pre">GestionnaireTaches</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fichier_csv</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modules/gestion_des_taches.html#GestionnaireTaches"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modules.gestion_des_taches.GestionnaireTaches" title="Lien permanent vers cette définition"></a></dt>
 <dd><p>Bases : <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>classe permettant d’ajouter et sauvegarder les tâches</p>
+<p>Classe permettant d’ajouter et sauvegarder les tâches.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="modules.gestion_des_taches.GestionnaireTaches.ajouter_tache">
 <span class="sig-name descname"><span class="pre">ajouter_tache</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modules/gestion_des_taches.html#GestionnaireTaches.ajouter_tache"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modules.gestion_des_taches.GestionnaireTaches.ajouter_tache" title="Lien permanent vers cette définition"></a></dt>
@@ -119,23 +130,26 @@
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="modules.gestion_des_taches.GestionnaireTaches.charger_taches">
-<span class="sig-name descname"><span class="pre">charger_taches</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/modules/gestion_des_taches.html#GestionnaireTaches.charger_taches"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modules.gestion_des_taches.GestionnaireTaches.charger_taches" title="Lien permanent vers cette définition"></a></dt>
-<dd></dd></dl>
+<dt class="sig sig-object py" id="modules.gestion_des_taches.GestionnaireTaches.changer_statut_tache">
+<span class="sig-name descname"><span class="pre">changer_statut_tache</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nom</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modules/gestion_des_taches.html#GestionnaireTaches.changer_statut_tache"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modules.gestion_des_taches.GestionnaireTaches.changer_statut_tache" title="Lien permanent vers cette définition"></a></dt>
+<dd><p>Change l’état de la tâche avec le nom donné.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>nom</strong> – Le nom de la tâche à mettre à jour.</p>
+</dd>
+<dt class="field-even">Renvoie<span class="colon">:</span></dt>
+<dd class="field-even"><p>Aucune valeur de retour.</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="modules.gestion_des_taches.GestionnaireTaches.modifier_statut">
-<span class="sig-name descname"><span class="pre">modifier_statut</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nom</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modules/gestion_des_taches.html#GestionnaireTaches.modifier_statut"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modules.gestion_des_taches.GestionnaireTaches.modifier_statut" title="Lien permanent vers cette définition"></a></dt>
-<dd><dl class="simple">
-<dt>Modifie le statut terminee d’une taches designee:</dt><dd><ol class="arabic simple">
-<li><p>de l’instance cree par la classe GestionnaireTaches</p></li>
-<li><p>du fichier CSV ou les donnees taches sont sauvegardees</p></li>
-</ol>
-</dd>
-<dt>Args:</dt><dd><p>nom (str): Le nom de la tâche.</p>
-</dd>
-<dt>Returns:</dt><dd><p>Aucun return.
-Modifie directement le statut terminee des taches.</p>
+<dt class="sig sig-object py" id="modules.gestion_des_taches.GestionnaireTaches.charger_taches">
+<span class="sig-name descname"><span class="pre">charger_taches</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/modules/gestion_des_taches.html#GestionnaireTaches.charger_taches"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modules.gestion_des_taches.GestionnaireTaches.charger_taches" title="Lien permanent vers cette définition"></a></dt>
+<dd><p>Charge les tâches à partir d’un fichier CSV.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Renvoie<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Une liste d’instances de Tache.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -143,13 +157,21 @@ Modifie directement le statut terminee des taches.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="modules.gestion_des_taches.GestionnaireTaches.sauvegarder_taches">
 <span class="sig-name descname"><span class="pre">sauvegarder_taches</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/modules/gestion_des_taches.html#GestionnaireTaches.sauvegarder_taches"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modules.gestion_des_taches.GestionnaireTaches.sauvegarder_taches" title="Lien permanent vers cette définition"></a></dt>
-<dd><p>Ajoute une nouvelle tâche à la liste de tâches.</p>
+<dd><p>Sauvegarde les tâches dans un fichier CSV.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Renvoie<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Aucune valeur de retour.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modules.gestion_des_taches.GestionnaireTaches.supprimer_tache">
+<span class="sig-name descname"><span class="pre">supprimer_tache</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nom</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modules/gestion_des_taches.html#GestionnaireTaches.supprimer_tache"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modules.gestion_des_taches.GestionnaireTaches.supprimer_tache" title="Lien permanent vers cette définition"></a></dt>
+<dd><p>Supprime une tâche de la liste.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>nom</strong> – Le nom de la tâche.</p></li>
-<li><p><strong>description</strong> – La description de la tâche.</p></li>
-</ul>
+<dd class="field-odd"><p><strong>nom</strong> – Le nom de la tâche à supprimer.</p>
 </dd>
 <dt class="field-even">Renvoie<span class="colon">:</span></dt>
 <dd class="field-even"><p>Aucune valeur de retour.</p>
@@ -163,9 +185,9 @@ Modifie directement le statut terminee des taches.</p>
 <dt class="sig sig-object py" id="modules.gestion_des_taches.Tache">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">modules.gestion_des_taches.</span></span><span class="sig-name descname"><span class="pre">Tache</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modules/gestion_des_taches.html#Tache"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modules.gestion_des_taches.Tache" title="Lien permanent vers cette définition"></a></dt>
 <dd><p>Bases : <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Classe pour représenter une tâche</p>
-<p>Contient des attributs: nom, description et état de la tâche
-l’etat de la tache == False par défaut</p>
+<p>Classe pour représenter une tâche.</p>
+<p>Contient des attributs: nom, description et état de la tâche.
+L’état de la tâche est False par défaut.</p>
 </dd></dl>
 
 </section>
@@ -186,6 +208,60 @@ l’etat de la tache == False par défaut</p>
 </dd>
 <dt class="field-even">Renvoie<span class="colon">:</span></dt>
 <dd class="field-even"><p>Aucune valeur de retour.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-modules.app_gui">
+<span id="modules-app-gui"></span><h2>modules.app_gui<a class="headerlink" href="#module-modules.app_gui" title="Lien permanent vers cette rubrique"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="modules.app_gui.InterfaceUtilisateur">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">modules.app_gui.</span></span><span class="sig-name descname"><span class="pre">InterfaceUtilisateur</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gestionnaire_taches</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modules/app_gui.html#InterfaceUtilisateur"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modules.app_gui.InterfaceUtilisateur" title="Lien permanent vers cette définition"></a></dt>
+<dd><p>Bases : <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Classe pour créer une interface utilisateur pour gérer des tâches.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="modules.app_gui.InterfaceUtilisateur.afficher_taches">
+<span class="sig-name descname"><span class="pre">afficher_taches</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/modules/app_gui.html#InterfaceUtilisateur.afficher_taches"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modules.app_gui.InterfaceUtilisateur.afficher_taches" title="Lien permanent vers cette définition"></a></dt>
+<dd><p>Affiche les tâches dans le tableau.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Renvoie<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Aucune valeur de retour.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modules.app_gui.InterfaceUtilisateur.ajouter_tache">
+<span class="sig-name descname"><span class="pre">ajouter_tache</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/modules/app_gui.html#InterfaceUtilisateur.ajouter_tache"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modules.app_gui.InterfaceUtilisateur.ajouter_tache" title="Lien permanent vers cette définition"></a></dt>
+<dd><p>Ajoute une tâche en utilisant les valeurs des entrées.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Renvoie<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Aucune valeur de retour.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modules.app_gui.InterfaceUtilisateur.changer_statut_tache">
+<span class="sig-name descname"><span class="pre">changer_statut_tache</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/modules/app_gui.html#InterfaceUtilisateur.changer_statut_tache"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modules.app_gui.InterfaceUtilisateur.changer_statut_tache" title="Lien permanent vers cette définition"></a></dt>
+<dd><p>Change le statut des tâches sélectionnées dans le tableau.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Renvoie<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Aucune valeur de retour.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modules.app_gui.InterfaceUtilisateur.supprimer_tache">
+<span class="sig-name descname"><span class="pre">supprimer_tache</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/modules/app_gui.html#InterfaceUtilisateur.supprimer_tache"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modules.app_gui.InterfaceUtilisateur.supprimer_tache" title="Lien permanent vers cette définition"></a></dt>
+<dd><p>Supprime les tâches sélectionnées du tableau.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Renvoie<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Aucune valeur de retour.</p>
 </dd>
 </dl>
 </dd></dl>
