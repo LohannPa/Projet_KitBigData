@@ -7,11 +7,11 @@ Ce projet est un gestionnaire de tâches simple qui vous permet de gérer vos t�
 Pour utiliser ce projet, suivez ces étapes :
 
 1. Assurez-vous d'avoir Python installé sur votre système.
-2. Clonez ce dépôt en utilisant la commande suivante :
-
+2. Installez votre projet à partir du fichier Wheel en utilisant la commande suivante :
 ```bash
-git clone https://github.com/LohannPa/Projet_KitBigData.git
+pip install /racine_du_projet/dist/To_do_list_app-1.0.0-py3-none-any.whl
 ```
+à noter qu'il faut bien changer la racine_du_projet par votre dossier racine du projet
 
 
 ## 2. Utilisation
