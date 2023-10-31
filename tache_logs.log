@@ -14,3 +14,34 @@
 2023-10-23 21:49:27,929 - modules.gestion_des_taches - INFO - Loaded tasks from CSV file
 2023-10-23 21:49:27,931 - modules.gestion_des_taches - INFO - Saved tasks to CSV file
 2023-10-23 21:49:27,932 - modules.gestion_des_taches - INFO - Saved tasks to CSV file
+2023-10-27 13:35:59,634 - modules.gestion_des_taches - INFO - Saved tasks to CSV file
+2023-10-27 13:35:59,635 - modules.gestion_des_taches - INFO - Added task: Tâche 1
+2023-10-27 13:35:59,649 - modules.gestion_des_taches - INFO - Saved tasks to CSV file
+2023-10-27 13:35:59,651 - modules.gestion_des_taches - INFO - Added task: Tâche 2
+2023-10-27 13:35:59,767 - modules.gestion_des_taches - INFO - Saved tasks to CSV file
+2023-10-27 13:35:59,783 - modules.gestion_des_taches - INFO - Saved tasks to CSV file
+2023-10-31 09:59:13,104 - modules.gestion_des_taches - INFO - Loaded tasks from CSV file
+2023-10-31 09:59:37,449 - modules.gestion_des_taches - INFO - Saved tasks to CSV file
+2023-10-31 09:59:47,108 - modules.gestion_des_taches - INFO - Saved tasks to CSV file
+2023-10-31 09:59:47,109 - modules.gestion_des_taches - INFO - Added task: test
+2023-10-31 09:59:50,479 - modules.gestion_des_taches - INFO - Saved tasks to CSV file
+2023-10-31 09:59:50,480 - modules.gestion_des_taches - INFO - Added task: test2
+2023-10-31 09:59:53,682 - modules.gestion_des_taches - INFO - Saved tasks to CSV file
+2023-10-31 09:59:56,452 - modules.gestion_des_taches - INFO - Saved tasks to CSV file
+2023-10-31 10:00:04,416 - modules.gestion_des_taches - INFO - Saved tasks to CSV file
+2023-10-31 10:00:06,024 - modules.gestion_des_taches - INFO - Saved tasks to CSV file
+2023-10-31 10:00:10,744 - modules.gestion_des_taches - INFO - Loaded tasks from CSV file
+2023-10-31 10:16:02,042 - modules.gestion_des_taches - INFO - Loaded tasks from CSV file
+2023-10-31 10:16:02,049 - modules.gestion_des_taches - INFO - Saved tasks to CSV file
+2023-10-31 10:16:02,050 - modules.gestion_des_taches - INFO - Added task: tache1
+2023-10-31 10:16:02,059 - modules.gestion_des_taches - INFO - Saved tasks to CSV file
+2023-10-31 10:16:02,060 - modules.gestion_des_taches - INFO - Added task: tache2
+2023-10-31 10:42:17,656 - modules.gestion_des_taches - INFO - Loaded tasks from CSV file
+2023-10-31 10:42:17,662 - modules.gestion_des_taches - INFO - Saved tasks to CSV file
+2023-10-31 10:42:17,662 - modules.gestion_des_taches - INFO - Added task: Tâche 1
+2023-10-31 10:42:17,672 - modules.gestion_des_taches - INFO - Saved tasks to CSV file
+2023-10-31 10:42:17,673 - modules.gestion_des_taches - INFO - Added task: Tâche 2
+2023-10-31 10:42:17,691 - modules.gestion_des_taches - INFO - Loaded tasks from CSV file
+2023-10-31 10:42:17,704 - modules.gestion_des_taches - INFO - Loaded tasks from CSV file
+2023-10-31 10:42:17,711 - modules.gestion_des_taches - INFO - Saved tasks to CSV file
+2023-10-31 10:42:17,720 - modules.gestion_des_taches - INFO - Saved tasks to CSV file

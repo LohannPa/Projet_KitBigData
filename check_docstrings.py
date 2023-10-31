@@ -3,7 +3,8 @@ import os
 import glob
 from pydocstyle import check
 
-# Use the GITHUB_WORKSPACE environment variable to get the root directory of the repository
+# Use the GITHUB_WORKSPACE environment variable
+# to get the root directory of the repository
 repository_root = os.environ.get('GITHUB_WORKSPACE', '.')
 
 # You can define a directory or pattern for Python files within the repository
