@@ -39,8 +39,10 @@ class InterfaceUtilisateur:
         self.description_tache = tk.Entry(cadre_entrees)
         self.description_tache.pack(side=tk.LEFT)
 
-        # Créez des boutons pour ajouter, supprimer et changer le statut des tâches
-        self.ajouter_bouton = tk.Button(cadre_boutons, text="Ajouter une tâche",
+        # Créez des boutons pour ajouter, supprimer et changer
+        # le statut des tâches
+        self.ajouter_bouton = tk.Button(cadre_boutons,
+                                        text="Ajouter une tâche",
                                         command=self.ajouter_tache)
         self.ajouter_bouton.pack(side=tk.LEFT)
 
@@ -48,13 +50,16 @@ class InterfaceUtilisateur:
                                           command=self.supprimer_tache)
         self.supprimer_bouton.pack(side=tk.LEFT)
 
-        self.changer_statut_bouton = tk.Button(cadre_boutons, text="Changer le statut",
-                                               command=self.changer_statut_tache)
+        self.changer_statut_bouton = tk.Button(
+            cadre_boutons,
+            text="Changer le statut",
+            command=self.changer_statut_tache)
         self.changer_statut_bouton.pack(side=tk.LEFT)
 
         # Créez un Treeview pour afficher les tâches sous forme de tableau
-        self.tableau_taches = ttk.Treeview(cadre_affichage,
-                                           columns=("Nom", "Description", "Statut"))
+        self.tableau_taches = ttk.Treeview(
+            cadre_affichage,
+            columns=("Nom", "Description", "Statut"))
         self.tableau_taches.heading("#1", text="Nom")
         self.tableau_taches.heading("#2", text="Description")
         self.tableau_taches.heading("#3", text="Statut")

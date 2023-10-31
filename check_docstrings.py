@@ -7,11 +7,13 @@ import os
 import glob
 from pydocstyle import check
 
-# Utilise la variable d'environnement GITHUB_WORKSPACE pour obtenir le répertoire racine du
+# Utilise la variable d'environnement GITHUB_WORKSPACE pour obtenir
+# le répertoire racine du
 # dépôt
 repository_root = os.environ.get('GITHUB_WORKSPACE', '.')
 
-# Vous pouvez définir un répertoire ou un motif pour les fichiers Python dans le dépôt
+# Vous pouvez définir un répertoire ou un motif pour les fichiers Python
+# dans le dépôt
 python_files_pattern = os.path.join(repository_root, '*.py')
 python_files = glob.glob(python_files_pattern)
 

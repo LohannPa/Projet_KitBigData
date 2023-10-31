@@ -1,10 +1,13 @@
 """
-Importe les modules et packages nécessaires et fournit un exemple d'utilisation.
+Importe les modules et packages nécessaires et fournit un 
+exemple d'utilisation.
 
 Imports :
-- 'os' : Module du système d'exploitation pour les opérations de fichiers et de dossiers.
+- 'os' : Module du système d'exploitation pour les opérations de fichiers
+ et de dossiers.
 - 'tkinter as tk' : Module tkinter pour l'interface utilisateur graphique.
-- 'modules.gestion_des_taches.GestionnaireTaches' : Module pour gérer les tâches.
+- 'modules.gestion_des_taches.GestionnaireTaches' : Module 
+pour gérer les tâches.
 - 'modules.app_gui.InterfaceUtilisateur' : Module pour l'interface utilisateur.
 """
 import os
