@@ -1,3 +1,17 @@
+"""
+Imports et exemple d'utilisation des modules de gestion de tâches.
+
+Imports :
+- 'os' : Module du système d'exploitation pour les opérations
+de fichiers et de chemins.
+- 'modules.supprimer_taches.SupprimerTache' : Module pour supprimer des tâches.
+- 'modules.gestion_des_taches.GestionnaireTaches' : Module pour
+gérer des tâches.
+
+Exemple d'utilisation :
+- Initialise un gestionnaire de tâches avec un fichier de données CSV.
+- Ajoute des tâches d'exemple et gère les exceptions éventuelles.
+"""
 import os
 from modules.supprimer_taches import SupprimerTache
 from modules.gestion_des_taches import GestionnaireTaches
@@ -17,4 +31,3 @@ if __name__ == "__main__":
         gestionnaire.ajouter_tache("tache2", "Description de la tâche 2")
     except Exception as e:
         print(f"Une erreur s'est produite : {e}")
-
