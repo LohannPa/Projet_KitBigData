@@ -2,7 +2,13 @@
 name = "todolist"
 version = "0.1.0"
 description = "Gestionnaire de taches"
-authors = ["Your Name <you@example.com>"]
+authors = [
+    "Byong Hee LEE <lee.byonghee@gmail.com>",
+    "Yassine Chafai <yassine.chafai@telecom-paris.fr>",
+    "Youssef Elbrini <elbrini.youssef.4@gmail.com>",
+    "Adrien Rogel <adrienrogel@orange.fr>",
+    "Ialimy Tarakotoniaina <ialimitarakotoniaina@gmail.com>",
+]
 readme = "README.md"
 
 [tool.poetry.dependencies]
