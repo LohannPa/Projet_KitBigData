@@ -1,0 +1,14 @@
+README.md
+pyproject.toml
+setup.py
+To_do_list_app.egg-info/PKG-INFO
+To_do_list_app.egg-info/SOURCES.txt
+To_do_list_app.egg-info/dependency_links.txt
+To_do_list_app.egg-info/requires.txt
+To_do_list_app.egg-info/top_level.txt
+modules/__init__.py
+modules/app_gui.py
+modules/gestion_des_taches.py
+modules/supprimer_taches.py
+tests/__init__.py
+tests/test_gestionnaire_taches.py

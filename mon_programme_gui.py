@@ -1,16 +1,21 @@
+"""
+Importe les modules et packages nécessaires et fournit un exemple d'utilisation.
+
+Imports :
+- 'os' : Module du système d'exploitation pour les opérations de fichiers et de dossiers.
+- 'tkinter as tk' : Module tkinter pour l'interface utilisateur graphique.
+- 'modules.gestion_des_taches.GestionnaireTaches' : Module pour gérer les tâches.
+- 'modules.app_gui.InterfaceUtilisateur' : Module pour l'interface utilisateur.
+"""
 import os
 import tkinter as tk
 from modules.gestion_des_taches import GestionnaireTaches
 from modules.app_gui import InterfaceUtilisateur
 
 # Chemin du fichier CSV de données des tâches
-nom_fichier_data = 'data_taches.csv'
+NOM_FICHIER_DATA = 'data_taches.csv'
 dossier_data = os.path.join(os.path.dirname(__file__), 'data')
-chemin_fichier_csv = os.path.join(dossier_data, nom_fichier_data)
-
-# Fonction pour quitter l'application
-def quitter():
-    root.destroy()
+chemin_fichier_csv = os.path.join(dossier_data, NOM_FICHIER_DATA)
 
 # Exemple d'utilisation
 if __name__ == "__main__":
@@ -29,6 +34,12 @@ if __name__ == "__main__":
     app = InterfaceUtilisateur(root, gestionnaire_taches)
 
     # Créez un bouton pour quitter l'application
+    def quitter():
+        """
+        Fonction pour quitter l'application.
+
+        """
+        root.destroy()
     quitter_bouton = tk.Button(root, text="Quitter", command=quitter)
     quitter_bouton.pack()
 
