@@ -2,10 +2,10 @@
 Imports et exemple d'utilisation des modules de gestion de tâches.
 
 Imports :
-- 'os' : Module du système d'exploitation pour les opérations 
+- 'os' : Module du système d'exploitation pour les opérations
 de fichiers et de chemins.
 - 'modules.supprimer_taches.SupprimerTache' : Module pour supprimer des tâches.
-- 'modules.gestion_des_taches.GestionnaireTaches' : Module pour 
+- 'modules.gestion_des_taches.GestionnaireTaches' : Module pour
 gérer des tâches.
 
 Exemple d'utilisation :
